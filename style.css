@@ -30,7 +30,8 @@ body {
 #score {
     position: absolute;
     color: white;
-    left: 20px;
+    left: 100px;
+    top: 10px;
 }
 
 #birdbox {
@@ -47,7 +48,23 @@ body {
 
 
 
+#bloodSplash2 {
+    position: absolute;
+    width: 300px;
+    top: 350px;
+    left: 30%;
+    visibility: hidden;
+  
+}
 
+#bloodSplash {
+    position: absolute;
+    width: 300px;
+    top: 20px;
+    left: 120px;
+    visibility: hidden;
+
+}
 
 #birdOffset {
     top: 700px;
@@ -66,6 +83,12 @@ body {
     visibility: hidden;
 }
 
+#skull {
+    width: 60px;
+    margin: 20px;
+    display: inline;
+    position: absolute;
+}
 
 
 
