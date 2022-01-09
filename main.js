@@ -50,7 +50,7 @@ const smash = () => {
         setTimeout(function() {document.getElementById("pipe1").style.top = "-200px"; pipeBack=1}, 500)
 
         // Killing The Bird
-        if (birdOffset > (pipeOffset - 70) && birdOffset < pipeOffset) { // Depends on phone with
+        if (birdOffset > (pipeOffset - 100) && birdOffset < pipeOffset) { // Depends on phone with
             killed = 1;
             document.getElementById("birdbox").style.visibility = "hidden";
             setTimeout(function() {document.getElementById("birdbox").style.visibility = "visible";}, 500)
