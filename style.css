@@ -21,7 +21,7 @@ body {
     position: relative;
     background-color: black;
     width: 100%;
-    height: 50px;
+    height: 200px;
     top: 590px;
     animation: floor 3s linear infinite alternate;
 }
@@ -39,10 +39,18 @@ body {
     animation: birdMovement 2s linear infinite;
 }
 
+.birdbox2 {
+    position: absolute;
+    top: 180px;
+    animation: birdMovement2 1.2s linear infinite;
+}
+
+
+
 
 
 #birdOffset {
-    top: 570px;
+    top: 750px;
     left: 20px;
     position: absolute;
     color: white;
@@ -73,6 +81,16 @@ body {
 }
 
 @keyframes birdMovement {
+    from {
+        left: -400px;
+    }
+
+    to {
+        left: 340px;
+    }
+}
+
+@keyframes birdMovement2 {
     from {
         left: -400px;
     }

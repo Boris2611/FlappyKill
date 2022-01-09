@@ -13,6 +13,13 @@ const birdKilled = () => {
     score += 1;
     document.getElementById("score").innerHTML = "Score: " + score;
     document.getElementById("blood").style.visibility = "visible";
+
+    if (score == 10) {
+        document.getElementById("birdbox").className = "birdbox2";
+        document.getElementById("birdbox").classList.remove = "birdbox";
+    }
+
+
 };
 
 const smash = () => {
@@ -39,6 +46,8 @@ function checkLose() {
         score = 0;
         killed = 1;
         document.getElementById("blood").style.visibility = "hidden";
+        document.getElementById("birdbox").classList.remove = "birdbox1";
+        document.getElementById("birdbox").classList.remove = "birdbox2";
     }
 }
     
