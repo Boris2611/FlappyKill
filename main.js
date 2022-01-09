@@ -61,7 +61,7 @@ const smash = () => {
 
 
 function checkLose() {
-    if (birdOffset > pipeOffset && killed == 0) {
+    if (birdOffset > pipeOffset + 40 && killed == 0) {
         alert("You Lost")
         score = 0;
         killed = 1;
