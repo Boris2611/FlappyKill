@@ -1,12 +1,12 @@
-const smashSound = new Audio("smash.wav")
+const smashSound = new Audio("smash.wav");
 
 let pipeBack = 1;
-let birdOffset = 0;
+let pipeOffset;
+let birdOffset;
 let killed = 1; 
 let score = 0;
 
-setInterval(offsetCheck, 100); // Geting offset
-
+setInterval(offsetCheck, 10); // Geting offset
 
 const birdKilled = () => {
     setTimeout(function(){killed=0;}, 500);
@@ -14,12 +14,25 @@ const birdKilled = () => {
     document.getElementById("score").innerHTML = "Score: " + score;
     document.getElementById("blood").style.visibility = "visible";
 
-    if (score == 10) {
-        document.getElementById("birdbox").className = "birdbox2";
-        document.getElementById("birdbox").classList.remove = "birdbox";
+    if (score == 2) {
+        document.getElementById("birdbox").style.animation = "birdMovementFast 2s linear infinite ";
     }
 
+    if (score == 6) {
+        document.getElementById("birdbox").style.animation = "birdMovement 2s linear infinite";
+    }
 
+    if (score == 10) {
+        document.getElementById("birdbox").style.animation = "birdMovementFast 1.5s linear infinite";
+    }
+
+    if (score == 14) {
+        document.getElementById("birdbox").style.animation = "birdMovement 2s linear infinite";
+    }
+
+    if (score == 20) {
+        document.getElementById("birdbox").style.animation = "birdMovementFast 1.2s linear infinite";
+    }
 };
 
 const smash = () => {
@@ -30,7 +43,7 @@ const smash = () => {
         setTimeout(function() {document.getElementById("pipe1").style.top = "-200px"; pipeBack=1}, 500)
 
         // Killing The Bird
-        if (birdOffset > 180 && birdOffset < 270) { // Depends on phone with
+        if (birdOffset > (pipeOffset - 70) && birdOffset < pipeOffset) { // Depends on phone with
             killed = 1;
             document.getElementById("birdbox").style.visibility = "hidden";
             setTimeout(function() {document.getElementById("birdbox").style.visibility = "visible";}, 500)
@@ -41,20 +54,19 @@ const smash = () => {
 
 
 function checkLose() {
-    if (birdOffset > 270 && killed == 0) {
+    if (birdOffset > pipeOffset && killed == 0) {
         alert("You Lost")
         score = 0;
         killed = 1;
         document.getElementById("blood").style.visibility = "hidden";
-        document.getElementById("birdbox").classList.remove = "birdbox1";
-        document.getElementById("birdbox").className = "birdbox";
+        document.getElementById("birdbox").style.animation = "birdMovement 2s linear infinite";
     }
 }
     
-
 // Offset Testing
 function offsetCheck() {
-    document.getElementById("birdOffset").innerHTML = "Bird's Offset : " + document.getElementById("birdbox").offsetLeft + " --- Is Killed: " + killed;
     birdOffset = document.getElementById("birdbox").offsetLeft;
+    pipeOffset = document.getElementById("pipe1").offsetLeft;
+    document.getElementById("birdOffset").innerHTML = "Bird's Offset : " + birdOffset + " --- Pipe's Offset" + pipeOffset + " --- Is Killed: " + killed;
     checkLose();
 }
