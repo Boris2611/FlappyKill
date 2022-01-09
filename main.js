@@ -47,7 +47,7 @@ function checkLose() {
         killed = 1;
         document.getElementById("blood").style.visibility = "hidden";
         document.getElementById("birdbox").classList.remove = "birdbox1";
-        document.getElementById("birdbox").classList.remove = "birdbox2";
+        document.getElementById("birdbox").className = "birdbox";
     }
 }
     
