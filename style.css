@@ -1,0 +1,83 @@
+body {
+    background-image: url("bg.jpg");
+    height: 600px;
+    margin: 0;
+}
+
+#pipe1, #pipe2 {
+    position: absolute;
+    left: 70%;
+}
+
+#pipe1 {
+    top: -200px;
+}
+
+#pipe2 {
+    top: 310px;
+}
+
+#floor {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    top: 590px;
+    animation: floor 3s linear infinite alternate;
+}
+
+
+#score {
+    position: absolute;
+    color: white;
+    left: 20px;
+}
+
+.birdbox {
+    position: absolute;
+    top: 180px;
+    animation: birdMovement 2s linear infinite;
+}
+
+
+
+#birdOffset {
+    top: 570px;
+    left: 20px;
+    position: absolute;
+    color: white;
+}
+
+#blood {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 310px;
+    left: 70%;
+    visibility: hidden;
+}
+
+
+@keyframes floor {
+    from {
+        box-shadow: 0px 0px 30px 30px black;
+    }
+
+    50% {
+        box-shadow: 0px 0px 60px 60px black;
+    }
+
+    to {
+        box-shadow: 0px 0px 20px 20px black;
+    }
+}
+
+@keyframes birdMovement {
+    from {
+        left: -400px;
+    }
+
+    to {
+        left: 340px;
+    }
+}
