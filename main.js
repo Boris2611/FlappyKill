@@ -12,7 +12,7 @@ setInterval(offsetCheck, 10); // Geting offset
 
 const birdKilled = () => {
     smashSound.play(); // Sound when bird is killed
-    setTimeout(function(){killed=0;}, 500);
+    setTimeout(function(){killed=0;}, 700);
     score += 1;
     document.getElementById("score").innerHTML = ": " + score;
     document.getElementById("blood").style.visibility = "visible";
@@ -40,6 +40,21 @@ const birdKilled = () => {
         document.getElementById("bloodSplash2").style.visibility = "visible";
         splashSound.play();
     }
+
+    if (score == 25) {
+        document.getElementById("birdbox").style.animation = "birdMovementFast 2s linear infinite";
+    }
+
+    if (score == 30) {
+        document.getElementById("birdbox").style.animation = "birdMovementFast 1.5s linear infinite";
+        document.getElementById("bloodSplash3").style.visibility = "visible";
+        splashSound.play();
+    }
+
+    if (score == 35) {
+        document.getElementById("birdbox").style.animation = "birdMovementFast 1s linear infinite";
+    }
+
 };
 
 const smash = () => {
@@ -61,7 +76,7 @@ const smash = () => {
 
 
 function checkLose() {
-    if (birdOffset > pipeOffset + 40 && killed == 0) {
+    if (birdOffset > pipeOffset + 50 && killed == 0) {
         alert("You Lost")
         score = 0;
         killed = 1;
@@ -69,6 +84,7 @@ function checkLose() {
         document.getElementById("birdbox").style.animation = "birdMovement 2s linear infinite";
         document.getElementById("bloodSplash").style.visibility = "hidden";
         document.getElementById("bloodSplash2").style.visibility = "hidden";
+        document.getElementById("bloodSplash3").style.visibility = "hidden";
     }
 }
     
